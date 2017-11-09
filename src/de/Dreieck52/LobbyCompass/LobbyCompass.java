@@ -9,9 +9,9 @@ public class LobbyCompass extends JavaPlugin {
 
 	public static String prefix = "§f[§eCompass§f] ";
 	
-	public static String use_Permission = "lobbycompass.use";
-	public static String get_Permission = "lobbycompass.get";
-	public static String admin_Permission = "lobbycompass.admin";
+	public static String use_Permission = "lobbycompass2.use";
+	public static String get_Permission = "lobbycompass2.get";
+	public static String admin_Permission = "lobbycompass2.admin";
 	
 	@Override
 	public void onEnable() {
