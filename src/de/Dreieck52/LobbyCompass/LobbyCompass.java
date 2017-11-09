@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class LobbyCompass extends JavaPlugin {
 
-	public static String prefix = "§f[§eCompass§f] ";
+	public static String prefix = "Â§f[Â§eCompassÂ§f] ";
 	
 	public static String use_Permission = "lobbycompass.use";
 	public static String get_Permission = "lobbycompass.get";
@@ -16,7 +16,7 @@ public class LobbyCompass extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		
-		getCommand("lobbycompass").setExecutor(new LobbyCompassCommand(this));
+		getCommand("lobbycompass2").setExecutor(new LobbyCompassCommand(this));
 		Bukkit.getPluginManager().registerEvents(new LobbyCompassCommand(this), this);
 		
 		getConfig().options().header(
