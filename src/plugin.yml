@@ -1,10 +1,10 @@
-name: LobbyCompass
+name: LobbyCompass2
 author: Dreieck52
-version: 1.3
+version: 1.5
 
 main: de.Dreieck52.LobbyCompass.LobbyCompass
 
 commands:
-    lobbycompass:
+    lobbycompass2:
         description: General LobbyCompass Command
-        aliases: [lc, lobbyc, lcompass, lcomp]
+        aliases: [lc2, lobbyc2, lcompass2, lcomp2]
