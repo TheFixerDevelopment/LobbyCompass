@@ -38,24 +38,24 @@ public class LobbyCompassCommand implements CommandExecutor, Listener {
 			
 			Player p = (Player) cs;
 			
-			if (args.length == 0 && p.hasPermission(LobbyCompass.use_Permission)) {
+			if (args.length == 0 && p.hasPermission(LobbyCompass2.use_Permission)) {
 				
 				openLobbyCompassOnPlayer(p);
 			
 			} else if (args[0].equals("help") || args[0].equals("info")) {
 				
-				p.sendMessage(LobbyCompass.prefix + "§e---------- LobbyCompass ----------");
-				p.sendMessage(LobbyCompass.prefix + "§e> Compass-Lobby-Teleport Plugin by §lDreieck52");
-				p.sendMessage(LobbyCompass.prefix + "§e----------------------------------");
+				p.sendMessage(LobbyCompass.prefix + "Â§e---------- LobbyCompass 2 ----------");
+				p.sendMessage(LobbyCompass.prefix + "Â§e> Compass-Lobby-Teleport Plugin by Â§lDreieck52, updated by Zeao.");
+				p.sendMessage(LobbyCompass.prefix + "Â§e----------------------------------");
 				
-			} else if (args[0].equals("get") && (p.hasPermission(LobbyCompass.get_Permission) || p.hasPermission(LobbyCompass.admin_Permission))) {
+			} else if (args[0].equals("get") && (p.hasPermission(LobbyCompass2.get_Permission) || p.hasPermission(LobbyCompass2.admin_Permission))) {
 				
 				if (pl.getConfig().getBoolean("only-allow-command-lc_get-in-worlds") && !pl.getConfig().getStringList("get-compass-worlds").contains(p.getWorld().getName())) {
-					p.sendMessage(LobbyCompass.prefix + "§eThe Lobby-Compass is disabled for this world!");
+					p.sendMessage(LobbyCompass.prefix + "Â§eThe Lobby-Compass is disabled for this world!");
 					return true;
 				}
 				
-				p.sendMessage(LobbyCompass.prefix + "§eGiving you your Lobby-Compass!");
+				p.sendMessage(LobbyCompass.prefix + "Â§eGiving you your Lobby-Compass!");
 				
 				ItemStack compass = new ItemStack(Material.COMPASS);
 				ItemMeta compassMeta = compass.getItemMeta();
@@ -63,18 +63,18 @@ public class LobbyCompassCommand implements CommandExecutor, Listener {
 				compass.setItemMeta(compassMeta);
 				p.getInventory().addItem(compass);
 				
-			} else if (args[0].equals("reload") && (p.hasPermission(LobbyCompass.get_Permission) || p.hasPermission(LobbyCompass.admin_Permission))) {
+			} else if (args[0].equals("reload") && (p.hasPermission(LobbyCompass2.get_Permission) || p.hasPermission(LobbyCompass2.admin_Permission))) {
 				
-				p.sendMessage(LobbyCompass.prefix + "§aConfig reloaded!");
+				p.sendMessage(LobbyCompass.prefix + "Â§aConfig reloaded!");
 				pl.reloadConfig();
 				
 			} else {
 				
-				cs.sendMessage(LobbyCompass.prefix + "§cNot valid arguments or to few permissions.");
+				cs.sendMessage(LobbyCompass.prefix + "Â§cNot valid arguments or to few permissions.");
 			}
 			
 		} else {
-			cs.sendMessage(LobbyCompass.prefix + "§cYou're not a valid player.");
+			cs.sendMessage(LobbyCompass.prefix + "Â§cYou're not a valid player.");
 		}
 		
 		return true;
@@ -90,7 +90,7 @@ public class LobbyCompassCommand implements CommandExecutor, Listener {
 			
 			try {
 			
-				if (p.getItemInHand().getType() == Material.COMPASS && p.hasPermission(LobbyCompass.use_Permission)) {
+				if (p.getItemInHand().getType() == Material.COMPASS && p.hasPermission(LobbyCompass2.use_Permission)) {
 					
 					if (p.getItemInHand().getItemMeta().getDisplayName().equals(ChatColor.translateAlternateColorCodes('&', pl.getConfig().getString("compass-name")))) {
 						
